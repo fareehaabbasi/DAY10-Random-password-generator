@@ -1,0 +1,140 @@
+/* General Body Styling */
+body {
+  background: #f5d5e0;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  padding: 20px;
+}
+
+/* Card Container */
+.card {
+  border-radius: 16px;
+  padding: 30px;
+  background: #430d4b;
+  color: #fff;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+}
+
+/* Headings */
+.card h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #f5d5e0;
+}
+
+.card h5 {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  color: #f5d5e0;
+}
+
+/* Password Input */
+#password-input {
+  border: none;
+  font-size: 1rem;
+  padding: 10px 12px;
+  border-radius: 6px 0 0 6px;
+  outline: none;
+}
+
+input[type="checkbox"] {
+      width: 80px;
+      height: 80px;
+      accent-color: green; /* optional: color change */
+      cursor: pointer;
+    }
+
+    /* Label ka font bara karna */
+    label {
+      font-size: 20px;
+      cursor: pointer;
+    }
+
+/* Copy Button */
+.copy {
+  border-radius: 0 6px 6px 0;
+  border: none;
+  transition: all 0.2s ease-in-out;
+}
+
+.form-check-input {
+  display: none; /* asli checkbox hide */
+}
+
+.form-check-label {
+  position: relative;
+  padding-left: 28px;
+  cursor: pointer;
+}
+
+.form-check-label::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 4px;
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  background: #fff;
+  border: 2px solid #430d4b; /* border theme color */
+}
+
+.form-check-input:checked + .form-check-label::before {
+  background: #f5d5e0; /* tumhara theme color */
+  border-color: #430d4b;
+}
+
+.form-check-input:checked + .form-check-label::after {
+  content: "✔";
+  position: absolute;
+  left: 3px;
+  top: 3px;
+  color: #430d4b;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+
+/* Form Checkboxes
+.form-check-label {
+  margin-left: 6px;
+  font-size: 0.95rem;
+}
+.form-check-input {
+  accent-color: #f5d5e0; /* Theme color for checkboxes */
+  /* transform: scale(1.1);
+} */
+
+/* Range Slider */
+#range-length {
+  width: 100%;
+}
+#range-length::-webkit-slider-thumb {
+  background: #f5d5e0;
+}
+#range-length::-moz-range-thumb {
+  background: #f5d5e0;
+}
+
+/* Generate Button */
+#generate {
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  padding: 10px 20px;
+  transition: all 0.2s ease-in-out;
+}
+#generate:hover {
+  background: #e0bccc;
+  color: #430d4b;
+  transform: translateY(-2px);
+}
+
+/* Responsive Fixes */
+@media (max-width: 576px) {
+  .row.align-items-center {
+    flex-direction: column;
+    gap: 20px;
+  }
+}

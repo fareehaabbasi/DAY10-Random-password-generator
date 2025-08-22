@@ -1,10 +1,18 @@
 const passwordInput = document.getElementById('password-input');
 const btn = document.getElementById('generate');
-let checkUpper = document.getElementById('upper-case-check');
-let checkLower = document.getElementById('lower-case-check');
-let checkNumbers = document.getElementById('number-check');
-let checkSymbols = document.getElementById('symbol-check');
-let copy = document.getElementById('copy');
+const lengthValue = document.getElementById('length-value');
+const rangeLength = document.getElementById('range-length');
+const checkUpper = document.getElementById('upper-case-check');
+const checkLower = document.getElementById('lower-case-check');
+const checkNumbers = document.getElementById('number-check');
+const checkSymbols = document.getElementById('symbol-check');
+const copy = document.getElementById('copy');
+
+//SHOWING INPUT SLIDER VALUE
+lengthValue.textContent = rangeLength.value;
+rangeLength.addEventListener('input', () => {
+    lengthValue.textContent = rangeLength.value;
+})
 
 checkLower.checked = true;
 checkNumbers.checked = true;
@@ -34,7 +42,7 @@ function generatePassword() {
     }
 
     let i = 1;
-    while (i < 12) {
+    while (i <= rangeLength.value) {
         password += allChar.charAt(Math.floor(Math.random() * allChar.length));
         i++;
     }
@@ -63,9 +71,16 @@ function generatePassword() {
 //COPY PASSWORD 
 function copyPassword() {
     copy.addEventListener('click', () => {
-        passwordInput.select();
-        passwordInput.setSelectionRange(0, 99999); // For mobile devices
-        document.execCommand("copy");
+        if(passwordInput.value != "" || passwordInput.value.length >= 1) {
+            navigator.clipboard.writeText(passwordInput.value);
+            copy.innerText = "check";
+            copy.title = "Password Copied";
+
+            setTimeout(() => {
+                copy.innerText = "content_copy";
+                copy.title = "Copy Password";
+            }, 2000);
+        }
     })
 }
 
